@@ -19,3 +19,33 @@ const GreetProperly = (age) => {
 
 let HowOld = 17;
 console.log(GreetProperly(HowOld));
+
+// VAT Calculations
+// VAT exercise 1
+
+const CalculateVAT = (BasePrice, HighLowZeroVAT) => {
+  //   console.log(BasePrice);
+  //   console.log(HighLowZeroVAT);
+  if (HighLowZeroVAT == "High") {
+    console.log("Hoge BTW");
+    const VAT = BasePrice * 0.21;
+    return VAT;
+  } else if (HighLowZeroVAT == "Low") {
+    console.log("Lage BTW");
+    const VAT = BasePrice * 0.09;
+    return VAT;
+  } else {
+    console.log("geen BTW");
+    const VAT = 0;
+    return VAT;
+  }
+};
+
+const CalculateTotal = (BasePrice, HighLowZeroVAT) => {
+  const Total = BasePrice + CalculateVAT(BasePrice, HighLowZeroVAT);
+  return Total;
+};
+
+console.log(CalculateTotal(2000, "Low"));
+console.log(CalculateTotal(2000, "High"));
+console.log(CalculateTotal(2000, "Zero"));
